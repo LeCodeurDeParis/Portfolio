@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Footer from "./footer/menu";
+import Light from "./ui/light";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col h-screen relative`}
       >
+        <Light size={10} top={10} left={10} color="012A61" className="absolute rounded-full blur-[80px] -z-10"/>
+        <Light size={10} top={50} left={50} color="012A61" className="absolute rounded-full blur-[80px] -z-10"/>
+        <Light size={10} top={10} left={80} color="012A61" className="absolute rounded-full blur-[80px] -z-10 hidden lg:block"/>
         {children}
-        <Footer />
       </body>
     </html>
   );

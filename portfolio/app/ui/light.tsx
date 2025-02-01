@@ -1,21 +1,36 @@
+"use client"
+import { motion } from "framer-motion";
+
 interface LightProps {
     size: number;
     top: number;
     left: number;
     color: string;
+    className: string;
 }
 
-export default function Light({size, top, left, color }: LightProps) {
+export default function Light({size, top, left, color, className}: LightProps) {
     return (
-      <div
-        className={`absolute rounded-full blur-[80px] -z-10`}
+      <motion.div
+        className={className}
         style={{
           top: `${top}%`,
           left: `${left}%`,
           width: `${size}rem`,
           height: `${size}rem`,
-          backgroundColor: `#${color}`
+          backgroundColor: `#${color}`,
         }}
-      ></div>
+        animate={{
+          scale: [1, 1.5, 1], // Variation de taille
+          x: ["0%", "10%", "-10%", "0%"], // Légers mouvements horizontaux
+          y: ["0%", "10%", "-10%", "0%"], // Légers mouvements verticaux
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut",
+        }}
+    />
     );
   }
