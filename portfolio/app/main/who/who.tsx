@@ -12,10 +12,10 @@ export default function Who() {
         return `conic-gradient(from ${r}deg, #A5C5CC, #021334)`
     })
     return (
-        <div className="relative flex flex-col items-center justify-center gap-4 w-3/4 bg-[#A5C5CC]">
-            <div className="bg-[#A5C5CC] z-10 rounded-lg p-4">
-                <h2 className="text-xl font-bold text-center z-10">Qui suis-je ?</h2>
-                <p className="text-center z-10">
+        <div className="relative flex flex-col self-start items-start justify-center ml-8 w-full p-8">
+            <div className="flex flex-col gap-4 z-10 rounded-lg w-1/3">
+                <h2 className="text-xl font-bold text-start z-10">Qui suis-je ?</h2>
+                <p className="text-start z-10">
                     Je suis un développeur fullstack passionné par la programmation et les nouvelles technologies.
                     J'aime apprendre et découvrir de nouvelles choses, et je suis toujours à la recherche de nouveaux défis.
                     Je suis également un grand fan de jeux vidéo et de musique.
@@ -23,10 +23,10 @@ export default function Who() {
                 </p>
             </div>
             
-            <motion.div className="absolute -inset-1 rounded-lg"
+            {/* <motion.div className="absolute -inset-1 rounded-lg"
             style={{background:
                 rotatingBg
-            }}/>
+            }}/> */}
         </div>
     );
 }
