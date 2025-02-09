@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-export default function Header() {
+export default function HomeHeader() {
     return (
         <header className="flex flex-col gap-8 justify-center items-center px-4 py-8 mt-16">
             <div className="w-36 h-36 relative">

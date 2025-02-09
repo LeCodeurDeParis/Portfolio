@@ -1,13 +1,12 @@
 import Menu from "./menu/menu";
-import Header from "./header";
+import HomeHeader from "./homeHeader";
 import Main from "./main";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <HomeHeader />
       <Main />
-      <Menu />
     </>
   );
 }
