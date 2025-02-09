@@ -6,13 +6,13 @@ import Who from "./who/who";
 import { motion } from "framer-motion";
 
 export default function Main() {
-    const dotNbr = 12;
+    const dotNbr = 6;
 
     const dotVariants = {
         animate: (custom : number) => ({
         x: ["20%", "1880%"],
         transition: {
-            duration: 6,         
+            duration: 3,         
             ease: "linear",      
             repeat: Infinity,    
             delay: custom * 0.6, 

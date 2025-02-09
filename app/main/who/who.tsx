@@ -18,6 +18,8 @@ export default function Who() {
                 <p className="text-start z-10">
                     Je suis un développeur fullstack passionné par la programmation et les nouvelles technologies.
                     J'aime apprendre et découvrir de nouvelles choses, et je suis toujours à la recherche de nouveaux défis.
+                </p>
+                <p className="text-start z-10">
                     Je suis également un grand fan de jeux vidéo et de musique.
                     Mes stacks préférées sont Next et Node.js, mais je suis également à l'aise avec d'autres technologies tel que Symfony.
                 </p>
