@@ -1,4 +1,4 @@
-export default function Projets() {
+export default function rProjets() {
     return (
         <div className="relative flex flex-col self-start items-start justify-center ml-8 w-full p-8">
             <div className="flex flex-col self-end gap-4 z-10 rounded-lg w-1/3">

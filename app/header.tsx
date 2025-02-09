@@ -9,7 +9,7 @@ export default function Header() {
             <div className="w-36 h-36 relative">
                 <Image src="/Paul.jpg" alt="Paul" layout='fill' className="rounded-full object-cover" />
             </div>
-            <div className='flex flex-col gap-4 items-center'>
+            <div className='flex flex-col gap-2 items-center'>
                 <motion.h1 
                     className="text-2xl font-bold text-[#021334]"
                     initial={{ opacity: 0, y: -20}}

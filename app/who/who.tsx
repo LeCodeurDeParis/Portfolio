@@ -1,16 +1,7 @@
 "use client";
 
-import { clamp, motion, useTime, useTransform } from "framer-motion";
 
 export default function Who() {
-    const time = useTime();
-
-    const rotate = useTransform(time, [0, 6000], [0, 360], {
-        clamp: false
-    });
-    const rotatingBg = useTransform(rotate, (r) => {
-        return `conic-gradient(from ${r}deg, #A5C5CC, #021334)`
-    })
     return (
         <div className="relative flex flex-col self-start items-start justify-center ml-8 w-full p-8">
             <div className="flex flex-col gap-4 z-10 rounded-lg w-1/3">

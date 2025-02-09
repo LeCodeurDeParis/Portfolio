@@ -1,6 +1,6 @@
 "use client";
 
-import Projets from "./projets/projets";
+import Projets from "./rProjets/rProjets";
 import Who from "./who/who";
 
 import { motion } from "framer-motion";
