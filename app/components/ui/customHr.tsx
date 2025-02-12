@@ -2,11 +2,12 @@ import { motion } from "framer-motion";
 
 interface CustomHrProps {
   dotNbr: number;
-  width: string;
   start: string;
   end: string;
   angle: string;
   speed: number;
+  delay: number;
+  width?: string;
   top?: string;
   left?: string;
   right?: string;
@@ -15,45 +16,84 @@ interface CustomHrProps {
   classNameDots?: string;
 }
 
-const CustomHr: React.FC<CustomHrProps> = ({ dotNbr, width, start, end, angle, speed, top, left, right, bottom, className, classNameDots }) => {
+const CustomHr: React.FC<CustomHrProps> = ({ 
+  dotNbr, 
+  start, 
+  end, 
+  angle, 
+  speed, 
+  delay, 
+  width = '10%',
+  top, 
+  left, 
+  right, 
+  bottom, 
+  className, 
+  classNameDots 
+}) => {
+  const normalizePercentage = (value: string) => {
+    const numValue = parseInt(value);
+    return `${Math.max(0, Math.min(100, numValue))}%`;
+  };
+
   const dotVariants = {
     animate: (custom: number) => ({
-      x: [start, end],
+      left: [normalizePercentage(start), normalizePercentage(end)],
       transition: {
         duration: speed,
         ease: "linear",
         repeat: Infinity,
-        delay: custom * 0.6,
+        delay: custom * delay
       },
     }),
   };
 
   return (
-    <div className={`relative ${width} h-12`} style={{ transform: `rotate(${angle})` }}>
-      <hr 
-        className={`absolute inset-0 ${className}`}
-        style={{
-            top: `${top}%`,
-            left: `${left}%`,
-            right: `${right}%`,
-            bottom: `${bottom}%`,
-        }}/>
-      {Array.from({ length: dotNbr }).map((_, i) => (
-        <motion.hr
-          key={i}
-          custom={i}
-          variants={dotVariants}
-          initial={{ x: "0%" }}
-          animate="animate"
-          className={`border-4 rounded-full w-[5%] absolute ${classNameDots}`}
+    <div style={{ 
+      position: 'absolute',
+      top,
+      left,
+      right,
+      bottom,
+      width: width,
+      height: '96px',
+      transform: `rotate(${angle})`,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}>
+      <div style={{
+        position: 'relative',
+        width: '100%',
+        height: '4px'
+      }}>
+        <hr 
+          className={className}
           style={{
-              top: `${top}%`,
-              left: `${left}%`,
-              right: `${right}%`,
-              bottom: `${bottom}%`,
+            position: 'absolute',
+            width: '100%',
+            margin: 0,
+            top: '50%',
+            transform: 'translateY(-50%)',
+            zIndex: 0
           }}
         />
-      ))}
+        {Array.from({ length: dotNbr }).map((_, i) => (
+          <motion.hr
+            key={i}
+            custom={i}
+            variants={dotVariants}
+            initial={{ left: normalizePercentage(start) }}
+            animate="animate"
+            className={`border-[6px] rounded-full ${classNameDots}`}
+            style={{
+              position: 'absolute',
+              top: '50%',
+              transform: 'translate(-50%, -50%)',
+              }}
+          />
+        ))}
+      </div>
     </div>
   );
 };
