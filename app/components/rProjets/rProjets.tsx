@@ -6,12 +6,12 @@ export default function rProjets() {
                 <p className="text-start z-10">
                     Voici quelques projets sur lesquels j'ai travaillé. Vous pouvez retrouver l'intégralité de mes projets sur mon GitHub, ainsi que sur la page dédiée <a>projets</a>.
                 </p>
+                <ul>
+                    <li>Pokemon Fighter</li>
+                    <li>Netflux</li>
+                    <li>MinecraftPallet</li>
+                </ul>
             </div>
-            
-            {/* <motion.div className="absolute -inset-1 rounded-lg"
-            style={{background:
-                rotatingBg
-            }}/> */}
         </div>
     );
 }

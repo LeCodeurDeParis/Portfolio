@@ -2,20 +2,41 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import CustomHr from "../components/ui/customHr";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
+    initial: { 
+        opacity: 0, 
+        y: 60 
+    },
+    animate: { 
+        opacity: 1, 
+        y: 0,
+        transition: {
+            duration: 0.5,
+            ease: "easeOut",
+            staggerChildren: 0.4
+        }
+    }
+};
+
+const itemAnimation = {
+    initial: { opacity: 0, y: 20 },
+    animate: { 
+        opacity: 1, 
+        y: 0,
+        transition: {
+            duration: 0.7,
+            ease: "easeOut"
+        }
+    }
 };
 
 export default function Projets() {
     return (
-        <main className="flex flex-col items-center justify-start mt-16 py-8 px-4">
+        <main className="flex flex-col items-center justify-start mt-16 py-8 px-8 gap-32">
             <motion.h1 
-                className="text-4xl font-bold text-[#021334] mb-16"
+                className="text-4xl font-bold text-[#021334]"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -32,38 +53,26 @@ export default function Projets() {
                     viewport={{ once: true }}
                     variants={fadeInUp}
                 >
-                    <div className="w-full md:w-1/2 relative group">
-                        <Link href="https://github.com" target="_blank" className="block overflow-hidden rounded-lg">
+                    <motion.div variants={itemAnimation} className="w-full md:w-1/2 relative group">
+                        <Link href="https://github.com/LeCodeurDeParis/MinecraftPallet" target="_blank" className="w-fit flex overflow-hidden rounded-lg">
                             <Image
                                 src="/Minecraft_Vitrail.png"
                                 alt="Projet Minecraft"
-                                width={600}
-                                height={400}
-                                className="rounded-lg shadow-xl transition-transform duration-500 group-hover:scale-105"
+                                className="rounded-lg shadow-xl"
+                                width={500}
+                                height={500}
+                                sizes="100vw"
                             />
                         </Link>
-                        <CustomHr 
-                            dotNbr={4}
-                            start="0"
-                            end="100"
-                            angle="0deg"
-                            speed={2}
-                            delay={0.5}
-                            width="80%"
-                            top="110%"
-                            left="10%"
-                            className="border-[#021334] border-4 bg-[#021334] rounded-full"
-                            classNameDots="bg-[#A5C5CC] border-[#A5C5CC]"
-                        />
-                    </div>
+                    </motion.div>
                     <div className="w-full md:w-1/3 text-[#021334]">
-                        <h2 className="text-2xl font-bold mb-4">MinecraftPallet</h2>
-                        <p className="text-lg mb-4">Un générateur intelligent de palettes de blocs Minecraft pour vous aider à créer des compositions harmonieuses pour vos constructions.</p>
-                        <div className="flex flex-wrap gap-4">
+                        <motion.h2 variants={itemAnimation} className="text-2xl font-bold mb-4">MinecraftPallet</motion.h2>
+                        <motion.p variants={itemAnimation} className="text-lg mb-4">Un générateur intelligent de palettes de blocs Minecraft pour vous aider à créer des compositions harmonieuses pour vos constructions.</motion.p>
+                        <motion.div variants={itemAnimation} className="flex flex-wrap gap-4">
                             <span className="px-4 py-2 bg-[#021334] text-white rounded-full">HTML</span>
                             <span className="px-4 py-2 bg-[#021334] text-white rounded-full">CSS</span>
                             <span className="px-4 py-2 bg-[#021334] text-white rounded-full">JavaScript</span>
-                        </div>
+                        </motion.div>
                     </div>
                 </motion.div>
 
@@ -75,38 +84,26 @@ export default function Projets() {
                     viewport={{ once: true }}
                     variants={fadeInUp}
                 >
-                    <div className="w-full md:w-1/2 relative group">
-                        <Link href="https://github.com" target="_blank" className="block overflow-hidden rounded-lg">
+                    <motion.div variants={itemAnimation} className="w-full md:w-1/2 relative group flex justify-end">
+                        <Link href="https://github.com/LeCodeurDeParis/Projet-Pokemon-PHP" target="_blank" className="w-fit flex overflow-hidden rounded-lg">
                             <Image
                                 src="/Pokemon_1.png"
                                 alt="Projet Pokemon"
-                                width={600}
-                                height={400}
-                                className="rounded-lg shadow-xl transition-transform duration-500 group-hover:scale-105"
+                                className="rounded-lg shadow-xl"
+                                width={500}
+                                height={500}
+                                sizes="100vw"
                             />
                         </Link>
-                        <CustomHr 
-                            dotNbr={4}
-                            start="0"
-                            end="100"
-                            angle="0deg"
-                            speed={2}
-                            delay={0.5}
-                            width="80%"
-                            top="110%"
-                            left="10%"
-                            className="border-[#021334] border-4 bg-[#021334] rounded-full"
-                            classNameDots="bg-[#A5C5CC] border-[#A5C5CC]"
-                        />
-                    </div>
+                    </motion.div>
                     <div className="w-full md:w-1/3 text-[#021334]">
-                        <h2 className="text-2xl font-bold mb-4">Pokemon Fighter</h2>
-                        <p className="text-lg mb-4">Un simulateur de combat Pokémon tour par tour développé en programmation orientée objet.</p>
-                        <div className="flex flex-wrap gap-4">
+                        <motion.h2 variants={itemAnimation} className="text-2xl font-bold mb-4">Pokemon Fighter</motion.h2>
+                        <motion.p variants={itemAnimation} className="text-lg mb-4">Un simulateur de combat Pokémon tour par tour développé en programmation orientée objet.</motion.p>
+                        <motion.div variants={itemAnimation} className="flex flex-wrap gap-4">
                             <span className="px-4 py-2 bg-[#021334] text-white rounded-full">PHP</span>
                             <span className="px-4 py-2 bg-[#021334] text-white rounded-full">POO</span>
                             <span className="px-4 py-2 bg-[#021334] text-white rounded-full">MySQL</span>
-                        </div>
+                        </motion.div>
                     </div>
                 </motion.div>
 
@@ -118,38 +115,26 @@ export default function Projets() {
                     viewport={{ once: true }}
                     variants={fadeInUp}
                 >
-                    <div className="w-full md:w-1/2 relative group">
-                        <Link href="https://github.com" target="_blank" className="block overflow-hidden rounded-lg">
+                    <motion.div variants={itemAnimation} className="w-full md:w-1/2 relative group">
+                        <Link href="https://github.com/LeCodeurDeParis/Netflix404" target="_blank" className="w-fit flex overflow-hidden rounded-lg">
                             <Image
                                 src="/Netflix_Vitrail.png"
                                 alt="Projet Netflix"
-                                width={600}
-                                height={400}
-                                className="rounded-lg shadow-xl transition-transform duration-500 group-hover:scale-105"
+                                className="rounded-lg shadow-xl"
+                                width={500}
+                                height={500}
+                                sizes="100vw"
                             />
                         </Link>
-                        <CustomHr 
-                            dotNbr={4}
-                            start="0"
-                            end="100"
-                            angle="0deg"
-                            speed={2}
-                            delay={0.5}
-                            width="80%"
-                            top="110%"
-                            left="10%"
-                            className="border-[#021334] border-4 bg-[#021334] rounded-full"
-                            classNameDots="bg-[#A5C5CC] border-[#A5C5CC]"
-                        />
-                    </div>
+                    </motion.div>
                     <div className="w-full md:w-1/3 text-[#021334]">
-                        <h2 className="text-2xl font-bold mb-4">Netflix Clone</h2>
-                        <p className="text-lg mb-4">Une reproduction fidèle de l'interface utilisateur de Netflix après connexion, incluant la navigation et l'affichage des contenus.</p>
-                        <div className="flex flex-wrap gap-4">
+                        <motion.h2 variants={itemAnimation} className="text-2xl font-bold mb-4">Netflix Clone</motion.h2>
+                        <motion.p variants={itemAnimation} className="text-lg mb-4">Une reproduction fidèle de l'interface utilisateur de Netflix après connexion, incluant la navigation et l'affichage des contenus.</motion.p>
+                        <motion.div variants={itemAnimation} className="flex flex-wrap gap-4">
                             <span className="px-4 py-2 bg-[#021334] text-white rounded-full">React.Js</span>
                             <span className="px-4 py-2 bg-[#021334] text-white rounded-full">Tailwind</span>
                             <span className="px-4 py-2 bg-[#021334] text-white rounded-full">API TMDB</span>
-                        </div>
+                        </motion.div>
                     </div>
                 </motion.div>
             </div>

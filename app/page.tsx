@@ -1,6 +1,6 @@
 import Menu from "./menu/menu";
 import HomeHeader from "./homeHeader";
-import Main from "./main";
+import Main from "./homeMain";
 
 export default function Home() {
   return (
