@@ -41,7 +41,7 @@ export default function RProjets() {
             aria-labelledby="about-heading"
         >
             <motion.div 
-                className="flex flex-col self-end gap-4 md:gap-6 w-full md:w-2/3 lg:w-1/2"
+                className="flex flex-col self-center gap-4 md:gap-6 w-full md:w-2/3 lg:w-1/2"
                 initial="initial"
                 animate="animate"
                 variants={fadeIn}

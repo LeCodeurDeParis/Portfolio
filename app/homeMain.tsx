@@ -60,13 +60,15 @@ export default function Main() {
                                     role="group" 
                                     aria-label={`Compétences : ${skills[index * 2].name}`}
                                 >
-                                    <Image
-                                        src={skills[index * 2].src}
-                                        alt={`Logo ${skills[index * 2].alt}`}
-                                        width={80}
-                                        height={80}
-                                        className="w-12 h-12 md:w-20 md:h-20"
-                                    />
+                                    <div className="p-4 bg-white/80 rounded-full shadow-lg border border-[#021334]/10 backdrop-blur-sm flex items-center justify-center">
+                                        <Image
+                                            src={skills[index * 2].src}
+                                            alt={`Logo ${skills[index * 2].alt}`}
+                                            width={80}
+                                            height={80}
+                                            className="w-10 h-10 md:w-16 md:h-16"
+                                        />
+                                    </div>
                                     <p className="text-sm md:text-base text-[#021334] font-medium">{skills[index * 2].name}</p>
                                 </div>
                             )}
@@ -76,13 +78,15 @@ export default function Main() {
                                     className="absolute right-[20%] md:right-[30%] flex flex-col items-center gap-2 hover:scale-110 transition-transform duration-300"
                                     role="group"
                                     aria-label={`Compétences : ${skills[index * 2 + 1].name}`}>
-                                    <Image
-                                        src={skills[index * 2 + 1].src}
-                                        alt={skills[index * 2 + 1].alt}
-                                        width={80}
-                                        height={80}
-                                        className="w-12 h-12 md:w-20 md:h-20"
-                                    />
+                                    <div className="p-4 bg-white/80 rounded-full shadow-lg border border-[#021334]/10 backdrop-blur-sm flex items-center justify-center">
+                                        <Image
+                                            src={skills[index * 2 + 1].src}
+                                            alt={skills[index * 2 + 1].alt}
+                                            width={80}
+                                            height={80}
+                                            className="w-10 h-10 md:w-16 md:h-16"
+                                        />
+                                    </div>
                                     <p className="text-sm md:text-base text-[#021334] font-medium">{skills[index * 2 + 1].name}</p>
                                 </div>
                             )}
