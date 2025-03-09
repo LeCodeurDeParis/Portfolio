@@ -24,7 +24,7 @@ export default function HomeHeader() {
                     Paul Boisaubert-Baillion
                 </AnimatedText>
                 
-                <AnimatedLine delay={0.1} className="w-full md:w-3/4" />
+                <AnimatedLine delay={0.1}/>
                 
                 <AnimatedText 
                     className="text-lg md:text-xl font-bold"
@@ -33,7 +33,7 @@ export default function HomeHeader() {
                     Fullstack Developer
                 </AnimatedText>
                 
-                <AnimatedLine width="50%" delay={0.5} className="w-1/2 md:w-2/5"/>
+                <AnimatedLine width="50%" delay={0.5}/>
             </div>
         </header>
     );
