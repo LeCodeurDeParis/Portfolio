@@ -38,7 +38,7 @@ export default function RProjets() {
     return (
         <section 
             className="relative flex flex-col w-full p-4 md:p-8 mt-8 md:mt-16" 
-            aria-labelledby="about-heading"
+            aria-labelledby="projects-heading"
         >
             <motion.div 
                 className="flex flex-col self-center gap-4 md:gap-6 w-full md:w-2/3 lg:w-1/2"
@@ -53,8 +53,8 @@ export default function RProjets() {
                     Quelques projets...
                 </h2>
                 <p className="text-base md:text-lg text-[#021334]/90">
-                    Voici quelques projets sur lesquels j'ai travaillé. Vous pouvez retrouver 
-                    l'intégralité de mes projets sur mon {' '}
+                    Voici quelques projets sur lesquels j&apos;ai travaillé. Vous pouvez retrouver 
+                    l&apos;intégralité de mes projets sur mon {' '}
                     <Link 
                         href="https://github.com/LeCodeurDeParis" 
                         className="text-[#021334] hover:underline font-medium"

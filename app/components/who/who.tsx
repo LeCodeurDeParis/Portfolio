@@ -32,14 +32,14 @@ export default function Who() {
                 <div className="space-y-4 text-base md:text-lg text-[#021334]/90">
                     <p>
                         Je suis un développeur fullstack passionné par la programmation 
-                        et les nouvelles technologies. J'aime apprendre et découvrir 
+                        et les nouvelles technologies. J&apos;aime apprendre et découvrir 
                         de nouvelles choses, et je suis toujours à la recherche de 
                         nouveaux défis.
                     </p>
                     <p>
                         Je suis également un grand fan de jeux vidéo et de musique.
                         Mes stacks préférées sont Next et Node.js, mais je suis 
-                        également à l'aise avec d'autres technologies tel que Symfony.
+                        également à l&apos;aise avec d&apos;autres technologies tel que Symfony.
                     </p>
                 </div>
             </motion.div>

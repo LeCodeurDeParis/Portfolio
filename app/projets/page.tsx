@@ -132,7 +132,7 @@ export default function Projets() {
                     </motion.div>
                     <div className="w-full md:w-1/3 text-[#021334]">
                         <motion.h2 variants={itemAnimation} className="text-2xl font-bold mb-4">Netflix Clone</motion.h2>
-                        <motion.p variants={itemAnimation} className="text-lg mb-4">Une reproduction fidèle de l'interface utilisateur de Netflix après connexion, incluant la navigation et l'affichage des contenus.</motion.p>
+                        <motion.p variants={itemAnimation} className="text-lg mb-4">Une reproduction fidèle de l&apos;interface utilisateur de Netflix après connexion, incluant la navigation et l&apos;affichage des contenus.</motion.p>
                         <motion.div variants={itemAnimation} className="flex flex-wrap gap-4">
                             <span className="px-4 py-2 bg-[#021334] text-white rounded-full">React.Js</span>
                             <span className="px-4 py-2 bg-[#021334] text-white rounded-full">Tailwind</span>
