@@ -24,56 +24,72 @@ const skills = [
 ];
 
 export default function Main() {
-    const skillsRef = useRef(null);
+    const skillsRef = useRef<HTMLElement>(null);
     const { scrollYProgress } = useScroll({
         target: skillsRef,
-        offset: ["start end", "end end"]
+        offset: ["start center", "end end"]
     });
 
     return(
-        <main className="flex flex-col items-center justify-center mt-16 py-8 px-8 gap-32">
-            <div className="relative">
+        <main 
+        className="flex flex-col items-center justify-center mt-8 md:mt-16 py-4 md:py-8 px-4 md:px-8 gap-16 md:gap-32" 
+        role="main">
+            <section className="relative w-full flex flex-col gap-16 md:gap-32">
                 <Who />
                 <Projets />
-            </div>
-            <h2 className="text-2xl font-bold text-[#021334]">Mes Compétences</h2>
-            <div ref={skillsRef} className="w-full h-[200vh] relative">
+            </section>
+
+
+            <section ref={skillsRef} className="w-full h-[200vh] relative" aria-labelledby="skills-heading">
+            <h2 className="text-center text-xl md:text-2xl font-bold text-[#021334] w-full mb-8 md:mb-12" id="skills-heading">Mes Compétences</h2>
                 <motion.div 
                     style={{ 
                         scaleY: scrollYProgress ,
                         transformOrigin: 'top'
                     }} 
-                    className="w-2 h-[85%] absolute left-[50%] bg-[#021334] z-[-1] rounded-full"
+                    className="w-1 md:w-2 h-[85%] absolute left-[50%] top-[10%] bg-[#021334] z-[-1] rounded-full"
+                    aria-hidden="true"
                 />
-                {[...Array(Math.ceil(skills.length / 2))].map((_, index) => (
-                    <div key={index} className="absolute w-full" style={{ top: `${index * 12.5}%` }}>
-                        {/* Logo gauche */}
-                        {skills[index * 2] && (
-                            <div className="absolute left-[30%] flex flex-col items-center gap-2 hover:scale-110">
-                                <Image
-                                    src={skills[index * 2].src}
-                                    alt={skills[index * 2].alt}
-                                    width={80}
-                                    height={80}
-                                />
-                                <p className="text-[#021334] font-medium">{skills[index * 2].name}</p>
-                            </div>
-                        )}
-                        {/* Logo droite */}
-                        {skills[index * 2 + 1] && (
-                            <div className="absolute right-[30%] flex flex-col items-center gap-2 hover:scale-110 ">
-                                <Image
-                                    src={skills[index * 2 + 1].src}
-                                    alt={skills[index * 2 + 1].alt}
-                                    width={80}
-                                    height={80}
-                                />
-                                <p className="text-[#021334] font-medium">{skills[index * 2 + 1].name}</p>
-                            </div>
-                        )}
-                    </div>
-                ))}
-            </div>
+                <ul className="list-none p-0 m-0">
+                    {[...Array(Math.ceil(skills.length / 2))].map((_, index) => (
+                        <li key={index} className="absolute w-full" style={{ top: `${(index * 12.5) + 10}%` }}>
+                            {/* Logo gauche */}
+                            {skills[index * 2] && (
+                                <div 
+                                    className="absolute left-[20%] md:left-[30%] flex flex-col items-center gap-2 hover:scale-110 transition-transform duration-300"
+                                    role="group" 
+                                    aria-label={`Compétences : ${skills[index * 2].name}`}
+                                >
+                                    <Image
+                                        src={skills[index * 2].src}
+                                        alt={`Logo ${skills[index * 2].alt}`}
+                                        width={80}
+                                        height={80}
+                                        className="w-12 h-12 md:w-20 md:h-20"
+                                    />
+                                    <p className="text-sm md:text-base text-[#021334] font-medium">{skills[index * 2].name}</p>
+                                </div>
+                            )}
+                            {/* Logo droite */}
+                            {skills[index * 2 + 1] && (
+                                <div 
+                                    className="absolute right-[20%] md:right-[30%] flex flex-col items-center gap-2 hover:scale-110 transition-transform duration-300"
+                                    role="group"
+                                    aria-label={`Compétences : ${skills[index * 2 + 1].name}`}>
+                                    <Image
+                                        src={skills[index * 2 + 1].src}
+                                        alt={skills[index * 2 + 1].alt}
+                                        width={80}
+                                        height={80}
+                                        className="w-12 h-12 md:w-20 md:h-20"
+                                    />
+                                    <p className="text-sm md:text-base text-[#021334] font-medium">{skills[index * 2 + 1].name}</p>
+                                </div>
+                            )}
+                        </li>
+                    ))}
+                </ul>
+            </section>
         </main>
     )
 }

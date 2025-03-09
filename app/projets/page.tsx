@@ -46,8 +46,9 @@ export default function Projets() {
             
             <div className="w-full h-full relative flex flex-col items-center gap-32" style={{ minHeight: '100vh' }}>
                 {/* Projet Minecraft */}
-                <motion.div 
-                    className="w-full flex flex-col md:flex-row items-center justify-center gap-8"
+                <motion.div
+                    id="minecraft"
+                    className="w-full flex flex-col md:flex-row items-center justify-center gap-8 "
                     initial="initial"
                     animate="animate"
                     viewport={{ once: true }}
@@ -66,7 +67,7 @@ export default function Projets() {
                         </Link>
                     </motion.div>
                     <div className="w-full md:w-1/3 text-[#021334]">
-                        <motion.h2 variants={itemAnimation} className="text-2xl font-bold mb-4">MinecraftPallet</motion.h2>
+                        <motion.h2 variants={itemAnimation} className="text-2xl font-bold mb-4">Palcraft</motion.h2>
                         <motion.p variants={itemAnimation} className="text-lg mb-4">Un générateur intelligent de palettes de blocs Minecraft pour vous aider à créer des compositions harmonieuses pour vos constructions.</motion.p>
                         <motion.div variants={itemAnimation} className="flex flex-wrap gap-4">
                             <span className="px-4 py-2 bg-[#021334] text-white rounded-full">HTML</span>
@@ -78,7 +79,8 @@ export default function Projets() {
 
                 {/* Projet Pokemon */}
                 <motion.div 
-                    className="w-full flex flex-col md:flex-row-reverse items-center justify-center gap-8"
+                    id="pokemon"
+                    className="w-full flex flex-col md:flex-row-reverse items-center justify-center gap-8 "
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
@@ -109,7 +111,8 @@ export default function Projets() {
 
                 {/* Projet Netflix */}
                 <motion.div 
-                    className="w-full flex flex-col md:flex-row items-center justify-center gap-8"
+                    id="netflix"
+                    className="w-full flex flex-col md:flex-row items-center justify-center gap-8 netflix"
                     initial="initial"
                     whileInView="animate"
                     viewport={{ once: true }}
