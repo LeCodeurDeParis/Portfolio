@@ -38,7 +38,7 @@ export default function ContactPage() {
         alert('Erreur : ' + data.message)
       }
     } catch (err) {
-      alert('Une erreur est survenue:' + err.message)
+      alert('Une erreur est survenue:')
       console.error(err)
     }
   }
