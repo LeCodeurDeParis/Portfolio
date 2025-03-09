@@ -1,4 +1,3 @@
-import Menu from "./menu/menu";
 import HomeHeader from "./homeHeader";
 import Main from "./homeMain";
 

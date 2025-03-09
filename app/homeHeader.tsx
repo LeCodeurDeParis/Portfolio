@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function HomeHeader() {
     return (
-        <header className="flex flex-col gap-8 justify-center items-center px-4 py-8 mt-16">
+        <header className="flex flex-col gap-8 justify-center items-center px-4 py-8 mt-24">
             <div className="w-36 h-36 relative">
                 <Image src="/Paul.jpg" alt="Paul" layout='fill' className="rounded-full object-cover" />
             </div>

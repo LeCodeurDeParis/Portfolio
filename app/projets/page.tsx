@@ -15,7 +15,7 @@ const fadeInUp = {
         transition: {
             duration: 0.5,
             ease: "easeOut",
-            staggerChildren: 0.4
+            staggerChildren: 0.2
         }
     }
 };
@@ -49,7 +49,7 @@ export default function Projets() {
                 <motion.div 
                     className="w-full flex flex-col md:flex-row items-center justify-center gap-8"
                     initial="initial"
-                    whileInView="animate"
+                    animate="animate"
                     viewport={{ once: true }}
                     variants={fadeInUp}
                 >
